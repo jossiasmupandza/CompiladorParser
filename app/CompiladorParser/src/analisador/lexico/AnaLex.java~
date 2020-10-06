@@ -33,11 +33,11 @@ public class AnaLex {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\1\1\1\1\17\1\17\1\17\22\0\1\1\11\0\1\7"+
-    "\1\7\1\0\1\7\1\6\1\7\1\5\11\4\3\0\1\16\3\0"+
-    "\32\2\4\0\1\2\1\0\4\2\1\14\1\11\1\2\1\13\1\10"+
-    "\4\2\1\15\5\2\1\12\6\2\1\0\1\3\10\0\1\17\u1fa2\0"+
-    "\1\17\1\17\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
+    "\11\0\1\12\1\11\1\22\1\12\1\10\22\0\1\12\11\0\1\6"+
+    "\1\5\1\0\1\5\1\4\1\7\1\3\11\2\3\0\1\21\3\0"+
+    "\32\1\4\0\1\1\1\0\4\1\1\17\1\14\1\1\1\16\1\13"+
+    "\4\1\1\20\5\1\1\15\6\1\1\0\1\1\10\0\1\22\u1fa2\0"+
+    "\1\22\1\22\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
 
   /** 
    * Translates characters to character classes
@@ -50,11 +50,12 @@ public class AnaLex {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\2\2\4\1\5\2\3"+
-    "\1\1\2\0\1\6\1\3\1\7\1\10\1\3\1\11";
+    "\1\0\1\1\1\2\2\3\2\4\2\5\2\2\1\1"+
+    "\3\0\1\5\1\6\1\2\1\7\1\10\2\0\1\2"+
+    "\1\0\1\5\1\11";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[19];
+    int [] result = new int[26];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -79,12 +80,13 @@ public class AnaLex {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\20\0\20\0\40\0\40\0\60\0\100\0\20"+
-    "\0\120\0\140\0\160\0\200\0\100\0\40\0\220\0\20"+
-    "\0\200\0\240\0\40";
+    "\0\0\0\23\0\46\0\71\0\114\0\23\0\137\0\162"+
+    "\0\23\0\205\0\230\0\253\0\276\0\114\0\321\0\344"+
+    "\0\46\0\367\0\23\0\276\0\u010a\0\u011d\0\u0130\0\u0143"+
+    "\0\u010a\0\46";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[19];
+    int [] result = new int[26];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -107,16 +109,19 @@ public class AnaLex {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\1\6\1\7\1\2\1\10"+
-    "\1\11\1\4\1\12\3\4\1\13\23\0\4\4\2\0"+
-    "\6\4\6\0\2\6\1\14\15\0\2\15\1\14\13\0"+
-    "\4\4\2\0\1\4\1\16\4\4\4\0\4\4\2\0"+
-    "\3\4\1\17\2\4\20\0\1\20\5\0\2\21\14\0"+
-    "\4\4\2\0\4\4\1\22\1\4\4\0\4\4\2\0"+
-    "\5\4\1\23\2\0";
+    "\1\2\1\3\1\4\1\5\1\2\2\6\1\7\1\10"+
+    "\2\11\1\12\1\3\1\13\3\3\1\14\25\0\3\3"+
+    "\7\0\6\3\4\0\2\4\1\15\20\0\2\16\1\15"+
+    "\24\0\1\17\1\20\24\0\1\11\12\0\3\3\7\0"+
+    "\1\3\1\21\4\3\3\0\3\3\7\0\3\3\1\22"+
+    "\2\3\23\0\1\23\3\0\2\24\17\0\6\25\1\26"+
+    "\14\25\10\20\1\10\1\11\11\20\1\0\3\3\7\0"+
+    "\4\3\1\27\1\3\2\0\6\25\1\30\22\25\1\30"+
+    "\1\31\13\25\1\0\3\3\7\0\5\3\1\32\2\0"+
+    "\6\25\1\30\1\11\13\25";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[176];
+    int [] result = new int[342];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -154,11 +159,11 @@ public class AnaLex {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\4\1\1\11\3\1\2\0\2\1\1\11"+
-    "\3\1";
+    "\1\0\1\11\3\1\1\11\2\1\1\11\3\1\3\0"+
+    "\3\1\1\11\1\1\2\0\1\1\1\0\2\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[19];
+    int [] result = new int[26];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -564,19 +569,19 @@ private void imprimir(String descricao, String lexema) {
             }
           case 10: break;
           case 2: 
-            { return new MucofotiToken(yytext(),yyline, "Espaco Branco");
+            { return new MucofotiToken(yytext(),yyline, "Identificador");
             }
           case 11: break;
           case 3: 
-            { return new MucofotiToken(yytext(),yyline, "Identificador");
+            { return new MucofotiToken(yytext(),yyline, "Numero inteiro");
             }
           case 12: break;
           case 4: 
-            { return new MucofotiToken(yytext(),yyline, "Numero inteiro");
+            { return new MucofotiToken(yytext(),yyline, "Operador Matematico");
             }
           case 13: break;
           case 5: 
-            { return new MucofotiToken(yytext(),yyline, "Operador Matematico");
+            { /* ignore */
             }
           case 14: break;
           case 6: 
