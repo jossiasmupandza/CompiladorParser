@@ -19,6 +19,8 @@ import java_cup.runtime.*;
 Identificador = [_|a-z|A-Z][a-z|A-Z|0-9|_]* 
 Inteiro = 0|[1-9][0-9]* 
 PontoFlutuante = [0-9][0-9]*"."[0-9]+ 
+Literal = '(.*?)' | \"(.*?)\"
+Caracter = '[a-z|A-Z]{1}'
 
 /* Espaco em Branco */
 FinalizadorDeLinha = \r|\n|\r\n
@@ -39,8 +41,10 @@ ConteudoDoComentario = ( [^*] | \*+ [^/*] )*
 /* Espaco em branco */
 {EspacoBranco}              { /* ignore */ }
 
-/* Identificadores */
-{Identificador}             { return new MucofotiToken(yytext(),yyline, "Identificador"); } 
+/* Caracteres */
+{Caracter}                   { return new MucofotiToken(yytext(),yyline, "Caracter"); }
+{Literal}                   { return new MucofotiToken(yytext(),yyline, "Cadeia de Caracteres/Literal"); }
+ 
 
 /* Numeros inteiros e decimais */
 {Inteiro}                   { return new MucofotiToken(yytext(),yyline, "Numero inteiro"); } 
@@ -72,11 +76,18 @@ ConteudoDoComentario = ( [^*] | \*+ [^/*] )*
 "inteiro"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros inteiro"); } 
 "decimal"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros decimais"); } 
 "logico"                    { return new MucofotiToken(yytext(),yyline, "Tipo de dado para valores binarios(verdade ou falso)"); }
-"literal"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros inteiro"); }
+"literal"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para literal/cadeia de caracteres"); }
+"car"                       { return new MucofotiToken(yytext(),yyline, "Tipo de dado para caracter"); }
 
-/* Tipos de Dados Nao Primitivos */
+/* Tipos de Dados Nao Primitivos & Palavras Especiais*/
 "vazio"                     { return new MucofotiToken(yytext(),yyline, "Subprograma sem retorno"); }
-"matriz"                     { return new MucofotiToken(yytext(),yyline, "Estrutura de dados"); }       
+"matriz"                    { return new MucofotiToken(yytext(),yyline, "Estrutura de dados"); }
+"programa"                  { return new MucofotiToken(yytext(),yyline, "Palavra que inicia o programa fonte"); }
+"<!Muco"                    { return new MucofotiToken(yytext(),yyline, "Indica inicio do programa"); }
+"!>"                        { return new MucofotiToken(yytext(),yyline, "Indica fim do programa"); }
+"centro"                    { return new MucofotiToken(yytext(),yyline, "Primeira função executada num programa mucofoti"); }
+"retorne"                   { return new MucofotiToken(yytext(),yyline, "Indica retorna um valor"); }
+"funcao"                    { return new MucofotiToken(yytext(),yyline, "Subprograma (funcao ou procedimento)"); }       
 
 /* Operadores Relacionais */ 
 "<>"                       { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Diferente"); }
@@ -97,6 +108,10 @@ ConteudoDoComentario = ( [^*] | \*+ [^/*] )*
 "["                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre Par Recto"); }
 "]"                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha Par Recto"); }
 "."                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Ponto"); }
+","                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Virgula"); }
+
+/* Identificadores */
+{Identificador}             { return new MucofotiToken(yytext(),yyline, "Identificador"); }
 
 /* Funcoes */
  

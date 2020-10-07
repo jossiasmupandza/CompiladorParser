@@ -1,0 +1,6 @@
+programa OlaMundo;
+<!Muco
+    funcao vazio centro() {
+        mostre('Ola, Mundo!');
+    }
+!>

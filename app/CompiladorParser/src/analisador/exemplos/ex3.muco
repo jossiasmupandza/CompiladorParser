@@ -1,0 +1,30 @@
+programa DeterminaMaior;
+<!Muco
+    funcao void centro(){
+        inteiro n1, n2, maior;
+        
+        mostre("Introduza o 1-o valor:");
+        n1 := leia();
+
+        mostre("Introduza o 2-o valor:");
+        n2 := leia();
+        
+        para (inteiro i :=1; i<=20; i++) {
+            mostre("maior:" + maior);
+        }
+    }
+
+    funcao inteiro detMaior(inteiro n1, inteiro n2) {
+        inteiro maior;
+        se (n1 > n2) {
+            maior := n1;
+        } senao {
+            maior := n2;
+        }
+        retorne maior;
+    }
+
+    funcao vazio visualizar(innteiro maior) {
+        mostre("maior:" + maior);
+    }
+!>

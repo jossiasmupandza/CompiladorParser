@@ -29,7 +29,7 @@ public class Tarrefas {
     public void lerFicherioPadrao() {
         try {
             String rootPath = Paths.get("").toAbsolutePath().toString();
-            String subPath = "/src/analisador/lexico/";
+            String subPath = "/src/analisador/exemplos/";
             String file = rootPath + subPath + "teste.muco";
             
             AnaLex al = new AnaLex(new FileReader(file));
@@ -48,7 +48,7 @@ public class Tarrefas {
             String nome = val.validarString("Introduza o nome do ficheiro .muco:", (byte)1, (byte)100);
             
             String rootPath = Paths.get("").toAbsolutePath().toString();
-            String subPath = "/src/analisador/lexico/";
+            String subPath = "/src/analisador/exemplos/";
             String file = rootPath + subPath + nome + ".muco";
             
             AnaLex al = new AnaLex(new FileReader(file));

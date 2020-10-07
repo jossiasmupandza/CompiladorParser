@@ -34,13 +34,14 @@ public class AnaLex {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\7\1\6\1\31\1\7\1\5\22\0\1\7\2\0\1\14"+
-    "\2\0\1\15\1\0\1\25\1\26\1\11\1\12\1\0\1\13\1\4"+
-    "\1\10\1\3\11\2\1\22\1\21\1\16\1\20\1\17\2\0\32\1"+
-    "\1\27\1\0\1\30\1\0\1\1\1\0\1\1\1\1\1\1\1\1"+
-    "\1\1\1\1\1\1\1\1\1\1\2\1\1\1\1\1\1\1\1\1"+
-    "\1\1\1\1\1\1\1\1\1\1\1\1\1\1\3\1\1\1\1\23"+
-    "\1\1\1\24\7\0\1\31\u1fa2\0\1\31\1\31\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
+    "\11\0\1\14\1\6\1\10\1\11\1\7\22\0\1\14\1\51\1\12"+
+    "\1\21\2\0\1\22\1\5\1\61\1\62\1\16\1\17\1\65\1\20"+
+    "\1\4\1\15\1\3\11\2\1\56\1\55\1\50\1\54\1\53\2\0"+
+    "\14\13\1\52\15\13\1\63\1\0\1\64\1\0\1\1\1\0\1\30"+
+    "\1\13\1\32\1\43\1\25\1\41\1\45\1\34\1\42\2\13\1\33"+
+    "\1\44\1\26\1\31\1\37\1\35\1\40\1\24\1\27\1\36\1\46"+
+    "\3\13\1\47\1\57\1\23\1\60\7\0\1\10\u1fa2\0\1\10\1\10"+
+    "\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
 
   /** 
    * Translates characters to character classes
@@ -53,14 +54,19 @@ public class AnaLex {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\2\3\1\4\2\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\13\1\14\1\15\1\1\1\16"+
-    "\1\1\1\17\1\20\1\21\1\22\1\23\1\24\2\0"+
-    "\1\5\1\0\1\25\1\26\1\27\1\30\1\31\1\32"+
-    "\3\0\1\5";
+    "\1\0\1\1\1\2\2\3\1\4\1\1\2\5\1\1"+
+    "\1\6\1\7\1\10\1\11\1\12\1\13\1\14\13\2"+
+    "\1\15\1\1\1\16\1\1\1\17\1\1\1\20\1\21"+
+    "\1\22\1\23\1\24\1\25\1\26\3\0\1\27\2\0"+
+    "\1\27\1\5\1\0\1\30\17\2\1\0\1\31\1\32"+
+    "\1\33\1\34\1\35\1\36\1\37\1\40\2\0\5\2"+
+    "\1\41\12\2\2\0\1\5\4\2\1\42\2\2\1\43"+
+    "\7\2\1\0\1\2\1\44\12\2\1\45\1\0\2\2"+
+    "\1\46\1\47\3\2\1\50\2\2\1\51\1\52\1\2"+
+    "\1\53\1\2\1\54\1\55\1\56\1\57";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[39];
+    int [] result = new int[145];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -85,14 +91,28 @@ public class AnaLex {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\32\0\64\0\116\0\150\0\32\0\202\0\32"+
-    "\0\234\0\32\0\32\0\32\0\32\0\32\0\266\0\320"+
-    "\0\352\0\32\0\u0104\0\32\0\32\0\32\0\32\0\32"+
-    "\0\32\0\u011e\0\150\0\u0138\0\u0152\0\32\0\32\0\32"+
-    "\0\32\0\32\0\u011e\0\u016c\0\u0186\0\u01a0\0\u016c";
+    "\0\0\0\66\0\154\0\242\0\330\0\66\0\u010e\0\66"+
+    "\0\u0144\0\u017a\0\u01b0\0\66\0\66\0\66\0\66\0\66"+
+    "\0\154\0\u01e6\0\u021c\0\u0252\0\u0288\0\u02be\0\u02f4\0\u032a"+
+    "\0\u0360\0\u0396\0\u03cc\0\u0402\0\u0438\0\u046e\0\u04a4\0\u04da"+
+    "\0\66\0\u0510\0\66\0\66\0\66\0\66\0\66\0\66"+
+    "\0\66\0\u0546\0\330\0\u057c\0\u057c\0\u05b2\0\u017a\0\u017a"+
+    "\0\u05e8\0\u061e\0\154\0\u0654\0\u068a\0\u06c0\0\u06f6\0\u072c"+
+    "\0\u0762\0\u0798\0\u07ce\0\u0804\0\u083a\0\u0870\0\u08a6\0\u08dc"+
+    "\0\u0912\0\u0948\0\u097e\0\66\0\66\0\66\0\66\0\66"+
+    "\0\66\0\u0546\0\u057c\0\u09b4\0\u09ea\0\u0a20\0\u0a56\0\u0a8c"+
+    "\0\u0ac2\0\u0af8\0\154\0\u0b2e\0\u0b64\0\u0b9a\0\u0bd0\0\u0c06"+
+    "\0\u0c3c\0\u0c72\0\u0ca8\0\u0cde\0\u0d14\0\u0d4a\0\u0d80\0\u09b4"+
+    "\0\u0db6\0\u0dec\0\u0e22\0\u0e58\0\154\0\u0e8e\0\u0ec4\0\154"+
+    "\0\u0efa\0\u0f30\0\u0f66\0\u0f9c\0\u0fd2\0\u1008\0\u103e\0\u1074"+
+    "\0\u10aa\0\154\0\u10e0\0\u1116\0\u114c\0\u1182\0\u11b8\0\u11ee"+
+    "\0\u1224\0\u125a\0\u1290\0\u12c6\0\154\0\u12fc\0\u1332\0\u1368"+
+    "\0\154\0\154\0\u139e\0\u13d4\0\u140a\0\154\0\u1440\0\u1476"+
+    "\0\154\0\66\0\u14ac\0\154\0\u14e2\0\154\0\154\0\154"+
+    "\0\154";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[39];
+    int [] result = new int[145];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -115,17 +135,120 @@ public class AnaLex {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\1\6\1\7\2\10\1\11"+
-    "\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
-    "\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
-    "\34\0\3\3\30\0\2\4\1\32\27\0\2\33\1\32"+
-    "\33\0\1\10\33\0\1\34\1\35\37\0\1\36\1\37"+
-    "\31\0\1\40\31\0\1\41\31\0\1\42\13\0\2\43"+
-    "\26\0\5\34\1\7\1\10\23\34\11\44\1\45\31\44"+
-    "\1\46\30\44\1\47\1\46\30\44\1\10\1\46\20\44";
+    "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11"+
+    "\1\0\1\10\1\12\1\3\1\10\1\13\1\14\1\15"+
+    "\1\16\1\17\1\20\1\21\1\22\1\23\4\3\1\24"+
+    "\1\25\3\3\1\26\1\27\1\30\1\31\1\32\1\33"+
+    "\1\3\1\34\1\3\1\35\1\36\1\3\1\37\1\40"+
+    "\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50"+
+    "\1\51\67\0\3\3\7\0\1\3\7\0\25\3\2\0"+
+    "\1\3\15\0\2\4\1\52\63\0\2\53\1\52\61\0"+
+    "\5\54\1\55\4\0\1\54\1\56\7\54\25\56\2\54"+
+    "\1\56\13\54\6\0\1\10\57\0\6\57\4\0\1\60"+
+    "\53\57\15\0\1\61\1\62\50\0\3\3\7\0\1\3"+
+    "\7\0\2\3\1\63\22\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\1\3\1\64\1\3\1\65\21\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\2\3"+
+    "\1\66\2\3\1\67\17\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\6\3\1\70\10\3\1\71\5\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\5\3"+
+    "\1\72\7\3\1\73\7\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\2\3\1\74\22\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\5\3\1\75\5\3"+
+    "\1\76\11\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\3\3\1\77\21\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\2\3\1\100\22\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\5\3\1\101\17\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\5\3"+
+    "\1\102\17\3\2\0\1\3\64\0\1\103\1\0\1\104"+
+    "\1\105\64\0\1\106\66\0\1\107\65\0\1\110\65\0"+
+    "\1\111\13\0\2\112\62\0\5\54\1\55\4\0\61\54"+
+    "\1\113\4\0\54\54\6\61\1\10\1\11\56\61\16\114"+
+    "\1\115\47\114\1\0\3\3\7\0\1\3\7\0\7\3"+
+    "\1\116\15\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\4\3\1\117\5\3\1\120\12\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\3\3\1\121\21\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\1\3"+
+    "\1\122\13\3\1\123\7\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\22\3\1\124\2\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\4\3\1\125\20\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\15\3"+
+    "\1\126\7\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\6\3\1\127\16\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\4\3\1\130\20\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\7\3\1\126\15\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\3\3"+
+    "\1\131\21\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\4\3\1\132\20\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\7\3\1\133\15\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\4\3\1\134\20\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\24\3"+
+    "\1\135\2\0\1\3\65\0\1\136\13\0\16\114\1\137"+
+    "\64\114\1\140\1\137\47\114\1\0\3\3\7\0\1\3"+
+    "\7\0\6\3\1\141\16\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\5\3\1\142\17\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\13\3\1\143\11\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\4\3"+
+    "\1\144\20\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\6\3\1\145\16\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\17\3\1\146\5\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\2\3\1\147\22\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\5\3"+
+    "\1\150\17\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\22\3\1\151\2\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\6\3\1\152\16\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\7\3\1\153\15\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\2\3"+
+    "\1\154\22\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\17\3\1\155\5\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\15\3\1\156\7\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\17\3\1\157\5\3"+
+    "\2\0\1\3\51\0\1\160\27\0\15\114\1\10\1\137"+
+    "\47\114\1\0\3\3\7\0\1\3\7\0\10\3\1\161"+
+    "\14\3\2\0\1\3\14\0\3\3\7\0\1\3\7\0"+
+    "\6\3\1\162\16\3\2\0\1\3\14\0\3\3\7\0"+
+    "\1\3\7\0\5\3\1\163\17\3\2\0\1\3\14\0"+
+    "\3\3\7\0\1\3\7\0\15\3\1\164\7\3\2\0"+
+    "\1\3\14\0\3\3\7\0\1\3\7\0\7\3\1\165"+
+    "\15\3\2\0\1\3\14\0\3\3\7\0\1\3\7\0"+
+    "\15\3\1\166\7\3\2\0\1\3\14\0\3\3\7\0"+
+    "\1\3\7\0\15\3\1\167\7\3\2\0\1\3\14\0"+
+    "\3\3\7\0\1\3\7\0\15\3\1\170\7\3\2\0"+
+    "\1\3\14\0\3\3\7\0\1\3\7\0\5\3\1\171"+
+    "\17\3\2\0\1\3\14\0\3\3\7\0\1\3\7\0"+
+    "\17\3\1\172\5\3\2\0\1\3\14\0\3\3\7\0"+
+    "\1\3\7\0\21\3\1\173\3\3\2\0\1\3\14\0"+
+    "\3\3\7\0\1\3\7\0\17\3\1\174\5\3\2\0"+
+    "\1\3\14\0\3\3\7\0\1\3\7\0\6\3\1\175"+
+    "\16\3\2\0\1\3\45\0\1\176\34\0\3\3\7\0"+
+    "\1\3\7\0\11\3\1\177\13\3\2\0\1\3\14\0"+
+    "\3\3\7\0\1\3\7\0\3\3\1\200\21\3\2\0"+
+    "\1\3\14\0\3\3\7\0\1\3\7\0\6\3\1\201"+
+    "\16\3\2\0\1\3\14\0\3\3\7\0\1\3\7\0"+
+    "\6\3\1\202\16\3\2\0\1\3\14\0\3\3\7\0"+
+    "\1\3\7\0\5\3\1\203\17\3\2\0\1\3\14\0"+
+    "\3\3\7\0\1\3\7\0\5\3\1\204\17\3\2\0"+
+    "\1\3\14\0\3\3\7\0\1\3\7\0\3\3\1\205"+
+    "\21\3\2\0\1\3\14\0\3\3\7\0\1\3\7\0"+
+    "\6\3\1\206\16\3\2\0\1\3\14\0\3\3\7\0"+
+    "\1\3\7\0\15\3\1\207\7\3\2\0\1\3\14\0"+
+    "\3\3\7\0\1\3\7\0\5\3\1\210\17\3\2\0"+
+    "\1\3\14\0\3\3\7\0\1\3\7\0\24\3\1\211"+
+    "\2\0\1\3\44\0\1\212\35\0\3\3\7\0\1\3"+
+    "\7\0\5\3\1\145\17\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\4\3\1\213\20\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\10\3\1\214\14\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\21\3"+
+    "\1\215\3\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\2\3\1\216\22\3\2\0\1\3\14\0\3\3"+
+    "\7\0\1\3\7\0\6\3\1\217\16\3\2\0\1\3"+
+    "\14\0\3\3\7\0\1\3\7\0\10\3\1\220\14\3"+
+    "\2\0\1\3\14\0\3\3\7\0\1\3\7\0\6\3"+
+    "\1\150\16\3\2\0\1\3\14\0\3\3\7\0\1\3"+
+    "\7\0\5\3\1\221\17\3\2\0\1\3\13\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[442];
+    int [] result = new int[5400];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -163,12 +286,13 @@ public class AnaLex {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\3\1\1\11\1\1\1\11\1\1\5\11"+
-    "\3\1\1\11\1\1\6\11\2\0\1\1\1\0\5\11"+
-    "\1\1\3\0\1\1";
+    "\1\0\1\11\3\1\1\11\1\1\1\11\3\1\5\11"+
+    "\20\1\1\11\1\1\7\11\3\0\1\1\2\0\2\1"+
+    "\1\0\20\1\1\0\6\11\2\1\2\0\20\1\2\0"+
+    "\20\1\1\0\15\1\1\0\13\1\1\11\7\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[39];
+    int [] result = new int[145];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -268,7 +392,7 @@ public class AnaLex {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 168) {
+    while (i < 174) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -622,107 +746,191 @@ public class AnaLex {
             { throw new RuntimeException("Caractere invalido \"" + yytext() +        
                             "\" na linha " + yyline + ", coluna " + yycolumn);
             }
-          case 27: break;
+          case 48: break;
           case 2: 
             { return new MucofotiToken(yytext(),yyline, "Identificador");
             }
-          case 28: break;
+          case 49: break;
           case 3: 
             { return new MucofotiToken(yytext(),yyline, "Numero inteiro");
             }
-          case 29: break;
+          case 50: break;
           case 4: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Ponto");
             }
-          case 30: break;
+          case 51: break;
           case 5: 
             { /* ignore */
             }
-          case 31: break;
+          case 52: break;
           case 6: 
             { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Divisao");
             }
-          case 32: break;
+          case 53: break;
           case 7: 
             { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Multiplicacao");
             }
-          case 33: break;
+          case 54: break;
           case 8: 
             { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Adicao");
             }
-          case 34: break;
+          case 55: break;
           case 9: 
             { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Subtracao");
             }
-          case 35: break;
+          case 56: break;
           case 10: 
             { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Resto da Devisao");
             }
-          case 36: break;
+          case 57: break;
           case 11: 
             { return new MucofotiToken(yytext(),yyline, "Operador Logico - E");
             }
-          case 37: break;
+          case 58: break;
           case 12: 
+            { return new MucofotiToken(yytext(),yyline, "Operador Logico - OU");
+            }
+          case 59: break;
+          case 13: 
             { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Menor");
             }
-          case 38: break;
-          case 13: 
+          case 60: break;
+          case 14: 
             { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Maior");
             }
-          case 39: break;
-          case 14: 
+          case 61: break;
+          case 15: 
             { return new MucofotiToken(yytext(),yyline, "Ponto e virgula");
             }
-          case 40: break;
-          case 15: 
+          case 62: break;
+          case 16: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre chave");
             }
-          case 41: break;
-          case 16: 
+          case 63: break;
+          case 17: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha chave");
             }
-          case 42: break;
-          case 17: 
+          case 64: break;
+          case 18: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre Par");
             }
-          case 43: break;
-          case 18: 
+          case 65: break;
+          case 19: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha Par");
             }
-          case 44: break;
-          case 19: 
+          case 66: break;
+          case 20: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre Par Recto");
             }
-          case 45: break;
-          case 20: 
+          case 67: break;
+          case 21: 
             { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha Par Recto");
             }
-          case 46: break;
-          case 21: 
+          case 68: break;
+          case 22: 
+            { return new MucofotiToken(yytext(),yyline, "Caracter especial - Virgula");
+            }
+          case 69: break;
+          case 23: 
+            { return new MucofotiToken(yytext(),yyline, "Cadeia de Caracteres/Literal");
+            }
+          case 70: break;
+          case 24: 
+            { return new MucofotiToken(yytext(),yyline, "Instucao de selecao simples");
+            }
+          case 71: break;
+          case 25: 
             { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Diferente");
             }
-          case 47: break;
-          case 22: 
+          case 72: break;
+          case 26: 
             { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Menor ou igual");
             }
-          case 48: break;
-          case 23: 
+          case 73: break;
+          case 27: 
+            { return new MucofotiToken(yytext(),yyline, "Indica fim do programa");
+            }
+          case 74: break;
+          case 28: 
             { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Maior ou igual");
             }
-          case 49: break;
-          case 24: 
+          case 75: break;
+          case 29: 
             { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Igual");
             }
-          case 50: break;
-          case 25: 
+          case 76: break;
+          case 30: 
             { return new MucofotiToken(yytext(),yyline, "Atribuicao");
             }
-          case 51: break;
-          case 26: 
+          case 77: break;
+          case 31: 
             { return new MucofotiToken(yytext(),yyline, "Ponto Flutuante");
             }
-          case 52: break;
+          case 78: break;
+          case 32: 
+            { return new MucofotiToken(yytext(),yyline, "Caracter");
+            }
+          case 79: break;
+          case 33: 
+            { return new MucofotiToken(yytext(),yyline, "Tipo de dado para caracter");
+            }
+          case 80: break;
+          case 34: 
+            { return new MucofotiToken(yytext(),yyline, "Instucao de selecao multipla");
+            }
+          case 81: break;
+          case 35: 
+            { return new MucofotiToken(yytext(),yyline, "estrutura de repeticao");
+            }
+          case 82: break;
+          case 36: 
+            { return new MucofotiToken(yytext(),yyline, "Instrucao de selecção em alternativa");
+            }
+          case 83: break;
+          case 37: 
+            { return new MucofotiToken(yytext(),yyline, "Subprograma sem retorno");
+            }
+          case 84: break;
+          case 38: 
+            { return new MucofotiToken(yytext(),yyline, "Primeira função executada num programa mucofoti");
+            }
+          case 85: break;
+          case 39: 
+            { return new MucofotiToken(yytext(),yyline, "Tipo de dado para valores binarios(verdade ou falso)");
+            }
+          case 86: break;
+          case 40: 
+            { return new MucofotiToken(yytext(),yyline, "Subprograma (funcao ou procedimento)");
+            }
+          case 87: break;
+          case 41: 
+            { return new MucofotiToken(yytext(),yyline, "Estrutura de dados");
+            }
+          case 88: break;
+          case 42: 
+            { return new MucofotiToken(yytext(),yyline, "Indica inicio do programa");
+            }
+          case 89: break;
+          case 43: 
+            { return new MucofotiToken(yytext(),yyline, "Tipo de dado para literal/cadeia de caracteres");
+            }
+          case 90: break;
+          case 44: 
+            { return new MucofotiToken(yytext(),yyline, "Indica retorna um valor");
+            }
+          case 91: break;
+          case 45: 
+            { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros inteiro");
+            }
+          case 92: break;
+          case 46: 
+            { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros decimais");
+            }
+          case 93: break;
+          case 47: 
+            { return new MucofotiToken(yytext(),yyline, "Palavra que inicia o programa fonte");
+            }
+          case 94: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
