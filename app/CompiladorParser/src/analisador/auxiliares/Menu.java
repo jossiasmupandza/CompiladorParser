@@ -23,6 +23,7 @@ public class Menu {
             switch (op) {
                 case 1:
                     ta.gerarNovoAnalisador();
+                    clearScreen();
                     System.out.println("\nNova classe AnaLex.java gerada com sucesso!\n");
                     break;
                 case 2: 
@@ -56,5 +57,10 @@ public class Menu {
                     break;
             }
         } while(op != 3);
+    }
+
+    private void clearScreen() {
+        System.out.print("\033[H\033[2J");   
+        System.out.flush();
     }
 }
