@@ -19,7 +19,6 @@ import java_cup.runtime.*;
 Identificador = [_|a-z|A-Z][a-z|A-Z|0-9|_]* 
 Inteiro = 0|[1-9][0-9]* 
 PontoFlutuante = [0-9][0-9]*"."[0-9]+ 
-OperadorMatematico = ("+" | "-" | "*" | "/")
 
 /* Espaco em Branco */
 FinalizadorDeLinha = \r|\n|\r\n
@@ -47,19 +46,59 @@ ConteudoDoComentario = ( [^*] | \*+ [^/*] )*
 {Inteiro}                   { return new MucofotiToken(yytext(),yyline, "Numero inteiro"); } 
 {PontoFlutuante}            { return new MucofotiToken(yytext(),yyline, "Ponto Flutuante"); }
 
-/* operadores matematicos */
-{OperadorMatematico}        { return new MucofotiToken(yytext(),yyline, "Operador Matematico"); }
+/* Operadores Aritmeticos */
+"+"                         { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Adicao"); }
+"-"                         { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Subtracao"); }
+"*"                         { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Multiplicacao"); }
+"/"                         { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Divisao"); }
+"#"                         { return new MucofotiToken(yytext(),yyline, "Operador Aritmetico - Resto da Devisao"); }
 
-/* Palavras reservadas */
-"se"                        { return new MucofotiToken(yytext(),yyline, "Instrucao se"); } 
-"entao"                     { return new MucofotiToken(yytext(),yyline, "Instrucao entao"); }        
+/* Operadores Logicos */ 
+"&"                         { return new MucofotiToken(yytext(),yyline, "Operador Logico - E"); }
+"|"                         { return new MucofotiToken(yytext(),yyline, "Operador Logico - OU"); }
 
-/* Operadores logicos */ 
-"=="                        { return new MucofotiToken(yytext(),yyline, "Operador de Igualidade"); }
+/* Estruturas de Selecao */
+"se"                        { return new MucofotiToken(yytext(),yyline, "Instucao de selecao simples"); }
+"entao"                     { return new MucofotiToken(yytext(),yyline, "Instrucao de selecção em alternativa"); }
+"escolha"                   { return new MucofotiToken(yytext(),yyline, "Instucao de selecao multipla"); }
+"caso"                      { return new MucofotiToken(yytext(),yyline, "Instucao de selecao multipla"); }
 
-/* Simbolos especiais */
-";"                         { return new MucofotiToken(yytext(),yyline, "Ponto e virgula"); }
-"="                         { return new MucofotiToken(yytext(),yyline, "Atribuicao"); }
+/* Estruturas de Repeticao */
+"enquanto"                  { return new MucofotiToken(yytext(),yyline, "estrutura de repeticao"); } 
+"para"                      { return new MucofotiToken(yytext(),yyline, "estrutura de repeticao"); }
+"faca"                      { return new MucofotiToken(yytext(),yyline, "estrutura de repeticao"); }
+
+/* Tipos de Dados Primitivos*/ 
+"inteiro"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros inteiro"); } 
+"decimal"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros decimais"); } 
+"logico"                    { return new MucofotiToken(yytext(),yyline, "Tipo de dado para valores binarios(verdade ou falso)"); }
+"literal"                   { return new MucofotiToken(yytext(),yyline, "Tipo de dado para numeros inteiro"); }
+
+/* Tipos de Dados Nao Primitivos */
+"vazio"                     { return new MucofotiToken(yytext(),yyline, "Subprograma sem retorno"); }
+"matriz"                     { return new MucofotiToken(yytext(),yyline, "Estrutura de dados"); }       
+
+/* Operadores Relacionais */ 
+"<>"                       { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Diferente"); }
+"<"                        { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Menor"); }
+"<="                       { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Menor ou igual"); }
+">"                        { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Maior"); }
+">="                       { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Maior ou igual"); }                 
+"=="                       { return new MucofotiToken(yytext(),yyline, "Operador Relacional - Igual"); }           
+
+
+/* Caracteres Especiais */
+";"                        { return new MucofotiToken(yytext(),yyline, "Ponto e virgula"); }
+":="                       { return new MucofotiToken(yytext(),yyline, "Atribuicao"); }
+"{"                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre chave"); }
+"}"                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha chave"); }
+"("                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre Par"); }
+")"                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha Par"); }
+"["                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Abre Par Recto"); }
+"]"                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Fecha Par Recto"); }
+"."                        { return new MucofotiToken(yytext(),yyline, "Caracter especial - Ponto"); }
+
+/* Funcoes */
  
 . { throw new RuntimeException("Caractere invalido \"" + yytext() +        
                             "\" na linha " + yyline + ", coluna " + yycolumn); } 
