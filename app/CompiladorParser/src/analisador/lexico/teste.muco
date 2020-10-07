@@ -1,3 +1,4 @@
-se a == b entao 12+3 // FFF 
-/* dad */
-/* if
+a == 1;
+//BBBb = 2;
+se a+b == 3 entao
+c = b; 

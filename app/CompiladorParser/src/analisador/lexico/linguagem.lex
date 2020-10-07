@@ -1,24 +1,20 @@
 package analisador.lexico;
- 
+import java_cup.runtime.*;
+
 %%
 
 %{ 
-/*-*  * funcoes e variaveis  */ 
+/* funcoes e variaveis  */ 
 
-private void imprimir(String descricao, String lexema) {   
-    System.out.println(lexema + " - " + descricao);    
-} 
-
-
- 
 %} 
  
-/*-*  * informacoes sobre a clase gerada  */ 
+/* informacoes sobre a clase gerada  */ 
 %public 
 %class AnaLex
-%type MucofotiToken 
- 
- 
+%type MucofotiToken
+%line 
+%column
+  
 /* Definicao de Regulares  */ 
 Identificador = [_|a-z|A-Z][a-z|A-Z|0-9|_]* 
 Inteiro = 0|[1-9][0-9]* 
@@ -37,7 +33,6 @@ ComentarioFimDeLinha = "//" {CaracterDeEntrada}* {FinalizadorDeLinha}?
 ComentarioDocumento = "/**" {ConteudoDoComentario} "*"+ "/"
 ConteudoDoComentario = ( [^*] | \*+ [^/*] )*
 
- 
 %% 
 /* Comentarios */
 {Comentario}                { /* ignore */ }
@@ -57,11 +52,14 @@ ConteudoDoComentario = ( [^*] | \*+ [^/*] )*
 
 /* Palavras reservadas */
 "se"                        { return new MucofotiToken(yytext(),yyline, "Instrucao se"); } 
-"entao"                      { return new MucofotiToken(yytext(),yyline, "Instrucao entao"); }
-
+"entao"                     { return new MucofotiToken(yytext(),yyline, "Instrucao entao"); }        
 
 /* Operadores logicos */ 
-"=="                        { return new MucofotiToken(yytext(),yyline, "Operador de Igualidade"); } 
+"=="                        { return new MucofotiToken(yytext(),yyline, "Operador de Igualidade"); }
+
+/* Simbolos especiais */
+";"                         { return new MucofotiToken(yytext(),yyline, "Ponto e virgula"); }
+"="                         { return new MucofotiToken(yytext(),yyline, "Atribuicao"); }
  
 . { throw new RuntimeException("Caractere invalido \"" + yytext() +        
                             "\" na linha " + yyline + ", coluna " + yycolumn); } 
