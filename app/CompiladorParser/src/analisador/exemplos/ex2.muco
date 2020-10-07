@@ -15,6 +15,7 @@ programa DeterminaMaior;
             maior := n2;
         }
 
+        //Similar ao ciclo for do java
         para (inteiro i :=1; i<=20; i++) {
             mostre("maior:" + maior);
         }
